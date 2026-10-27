@@ -76,6 +76,7 @@
  
   /* ── 导航按钮 ── */
   .nav {
+    overflow: visible;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0;
@@ -97,11 +98,21 @@
     transition: color 0.2s, background 0.2s;
     letter-spacing: 0.05em;
   }
-  .nav-btn:last-child { border-right: none; }
-  .nav-btn.active, .nav-btn:hover {
+
+.nav-btn.active, .nav-btn:hover {
     color: #91A58C;
     background: #E8EDE7;
-    }
+    position: relative;
+}
+
+.nav-btn.active::before, .nav-btn:hover::before {
+    content: '🐱';
+    position: absolute;
+    top: 5px;
+    left: 25%;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
  
   /* ── 主内容区 ── */
   .content {
@@ -281,7 +292,7 @@
     border-top: 1px solid var(--border);
   }
   .price-extras-title {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--text);
     margin-bottom: 10px;
@@ -310,7 +321,7 @@
     background: var(--accent-light);
     border-radius: 6px;
     padding: 6px 8px;
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text);
   }
   .rush-item strong { color: var(--accent); display: block; font-size: 13px; }
@@ -493,7 +504,7 @@
         <div class="card-img">作品展示图</div>
         <div class="card-info">
           <div class="card-title">作品案例</div>
-          <div class="card-desc">点击查看全部作品例图</div>
+          <div class="card-desc">点击查看作品例图</div>
         </div>
         <div class="card-arrow">›</div>
       </div>
@@ -505,7 +516,7 @@
         <div class="card-img">💰</div>
         <div class="card-info">
           <div class="card-title">价格明细</div>
-          <div class="card-desc">4r起 · 多种用途分级定价</div>
+          <div class="card-desc">2r起 · 多种用途分级定价</div>
         </div>
         <div class="card-arrow">›</div>
       </div>
@@ -552,18 +563,20 @@
  
     <div class="brush-group-label">可实体化</div>
     <div class="brush-grid">
-      <div class="brush-item"><img src="zenggong.png"></div>
-      <div class="brush-item">笔刷图</div>
-      <div class="brush-item">笔刷图</div>
-      <div class="brush-item">笔刷图</div>
+      <div class="brush-item"><img src="CANGCANG.png"></div>
+      <div class="brush-item"><img src="DUIJIUDANGGE.png"></div>
+      <div class="brush-item"><img src="FUXING.png"></div>
+      <div class="brush-item"><img src="GUANYINZHEN.png"></div>
+      <div class="brush-item"><img src="HUANQILEI.png"></div>
+      <div class="brush-item"><img src="JINTINGCHUNZHOU.png"></div>
     </div>
  
     <div class="brush-group-label">不可实体化</div>
     <div class="brush-grid">
-      <div class="brush-item">笔刷图</div>
-      <div class="brush-item">笔刷图</div>
-      <div class="brush-item">笔刷图</div>
-      <div class="brush-item">笔刷图</div>
+      <div class="brush-item"><img src="YUNMEN-BU.png"></div>
+      <div class="brush-item">待更新</div>
+      <div class="brush-item">待更新</div>
+      <div class="brush-item">待更新</div>
     </div>
   </div>
 </div>
@@ -577,6 +590,10 @@
       <div class="price-tier-header">
         <div class="price-tier-name">个人自用</div>
         <div class="price-tag">4r<span>/字</span></div>
+      </div>
+      <div class="price-tier-header">
+        <div class="price-tier-name">15字及以上</div>
+        <div class="price-tag">2r<span>/字</span></div>
       </div>
       <div class="price-tier-desc">个人头像、朋友圈背景、自用壁纸、自印漫展无料、非商用橡皮章刻字、逢年过节不送礼要送就送……</div>
     </div>
@@ -617,10 +634,10 @@
  
     <div class="price-tier">
       <div class="price-tier-header">
-        <div class="price-tier-name">企业性商用/买断</div>
+        <div class="price-tier-name">品牌商用/买断</div>
         <div class="price-tag" style="font-size:15px">自带方案</div>
       </div>
-      <div class="price-tier-desc">请直接联系沟通</div>
+      <div class="price-tier-desc">请直接联系沟通😳！</div>
     </div>
  
     <div class="price-extras">
@@ -677,7 +694,7 @@
       <div class="notice-item">不负责稿件查收之后的后期工作，修改需付修改费~</div>
       <div class="notice-item">稿件默认可展示</div>
       <div class="notice-item">自用稿转其他使用权限需补差价【少补多不退】</div>
-      <div class="notice-item" style="color:#C9607A">发现盗用/超范围使用字素，需立即停止侵权并补齐全额差价，随后交付三倍于全款的赔偿</div>
+      <div class="notice-item" style="color:#D4A0AF; font-weight:600">发现盗用/超范围使用字素，需立即停止侵权并补齐全额差价，随后交付三倍于全款的赔偿</div>
       <div class="notice-item">限24h内作出回应，否则稿件将公开使用</div>
     </div>
  
@@ -689,24 +706,13 @@
       <div class="notice-item">"不对味""感觉不够帅""你改改"这类要求不明确的修改意见我无法回应</div>
     </div>
  
-    <div class="section-label" style="margin-top:8px">可能想问的问题</div>
- 
-    <div class="qna-block">
-      <div class="qna-q">Q：原po脾气怎么样？好不好沟通？</div>
-      <div class="qna-a">我将秉持"争做全世界最温柔的乙方"的初心，你有任何疑问我都会尽量解答！</div>
- 
-      <div class="qna-q">Q：为什么先付后写？</div>
-      <div class="qna-a">有一些我的血泪教训。主要按付款时间更方便我排班😳！</div>
-
-      <div class="qna-q">Q：我本来约的是商用，发现价格超出预期，可以申请转自用吗？</div>
-      <div class="qna-a">不可以。你我均无法保证原来计划商用的稿件只用到自用范围内，为保护我的作品产出，价格取高，谢谢理解。</div>
-
-      <div class="qna-q">Q：为什么只能改两次？为什么后期换颜色也要收钱？</div>
-      <div class="qna-a">我的又一些血泪教训...曾经有人连换三次底图都不满意/一个字用了四种笔刷最后想换字还不想付款，这种就是纯纯折磨我惹😞
-        纠结底图加购png就行，自己去叠一下。查收之前能改两次，查收代表你对这张稿子没有任何意见，查收之后再改就要收钱啦。</div>
- 
-      <div class="qna-q">Q：我小孩不懂事乱花钱买你的字，我挣钱也不容易，给我退钱吧。</div>
-      <div class="qna-a" style="border-bottom:none;margin-bottom:0;padding-bottom:0">未成年退款请家长发送教育自家小孩的视频和手写情况说明书来。（说明约稿内容+退款原因+以后绝不再犯）这边为您退款且拉黑，为防止恶意退款稿件将公开使用。</div>
+    <div class="notice-block">
+      <div class="notice-block-title">可能想问的问题</div>
+      <div class="notice-item"><strong style="color:#D4A0AF">Q：原po脾气怎么样？好不好沟通？</strong><br>我将秉持"争做全世界最温柔的乙方"的初心，你有任何疑问我都会尽量解答！</div>
+      <div class="notice-item"><strong style="color:#D4A0AF">Q：为什么先付后写？</strong><br>有一些我的血泪教训。主要按付款时间更方便我排班😳！</div>
+      <div class="notice-item"><strong style="color:#D4A0AF">Q：我本来约的是商用，发现价格超出预期，可以申请转自用吗？</strong><br>不可以。你我均无法保证原来计划商用的稿件只用到自用范围内，为保护我的作品产出，价格取高，谢谢理解。</div>
+      <div class="notice-item"><strong style="color:#D4A0AF">Q：为什么只能改两次？为什么后期换颜色也要收钱？</strong><br>我的又一些血泪教训...曾经有人连换三次底图都不满意/一个字用了四种笔刷最后想换字还不想付款，这种就是纯纯折磨我惹😞 纠结底图加购png就行，自己去叠一下。查收之前能改两次，查收代表你对这张稿子没有任何意见，查收之后再改就要收钱啦。</div>
+      <div class="notice-item"><strong style="color:#D4A0AF">Q：我小孩不懂事乱花钱买你的字，我挣钱也不容易，给我退钱吧。</strong><br>未成年退款请家长发送教育自家小孩的视频和手写情况说明书来。（说明约稿内容+退款原因+以后绝不再犯）这边为您退款且拉黑，为防止恶意退款稿件将公开使用。</div>
     </div>
   </div>
 </div>
