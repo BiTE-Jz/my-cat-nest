@@ -39,7 +39,7 @@
   .hero {
     background: var(--accent);
     color: white;
-    padding: 32px 20px 100px;
+    padding: 32px 20px 30px;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -287,16 +287,6 @@
   .notice-item:last-child { border-bottom: none; }
 
   /* ── 联系 ── */
-  .contact-note-block {
-    background: var(--accent-light);
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 15px;
-    color: var(--accent);
-    text-align: center;
-    margin-bottom: 12px;
-    line-height: 1.7;
-  }
   .contact-item {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -313,16 +303,6 @@
   .contact-stack { display: flex; flex-direction: column; gap: 2px; }
 
   /* ── About Me ── */
-  .about-back {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 14px 16px 0;
-    font-size: 14px;
-    color: var(--muted);
-    cursor: pointer;
-  }
-  .about-back:hover { color: var(--accent); }
   .about-empty {
     padding: 60px 24px;
     text-align: center;
@@ -416,7 +396,7 @@
   .page-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     padding: 16px 16px 0;
   }
   .page-avatar {
@@ -503,7 +483,7 @@
   display: flex;
   gap: 10px;
   width: calc(100% - 40px);
-  max-width: 440px;
+  max-width: 445px;
 }
 
 .bottom-actions button {
@@ -511,7 +491,7 @@
   transform: none;
   flex: 1;
   min-width: 0;
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-radius: 16px;
   background: var(--card-bg);
   color: var(--green);
@@ -632,6 +612,11 @@
   border-color: var(--green);
 }
 
+/* 首页入口边框加粗 */
+.home-big,
+.home-cell {
+  border-width: 2px !important;
+}
 </style>
 </head>
 <body>
@@ -673,10 +658,10 @@
 
 <!-- ══════════ About Me ══════════ -->
 <div id="page-about" class="page">
-  <div class="about-back" onclick="showPage('home')">‹ 首页</div>
   <div class="about-empty">
-    空着<br>
-    我还没想好写些什么
+    哦哦恭喜你发现了这简陋的页面<br>
+    其实是想写自我介绍来着<br>
+    但是还没想好怎么写所以先空着！
   </div>
 </div>
 
@@ -717,7 +702,9 @@
 <div id="page-brush" class="page">
   <div class="page-header">
     <div class="page-avatar">头像</div>
-    <div class="page-bubble">每支笔刷都有不同的风格，选不定可以开盲盒！</div>
+    <div class="page-bubble">每支笔刷都有不同的风格，选不定可以开盲盒！<br>
+                             有需要的宝宝可以点击图片放大查看笔刷细节~
+    </div>
   </div>
   <div class="content">
     <div class="section-label">笔刷案例</div>
@@ -729,13 +716,53 @@
     <div id="brush-keti">
       <div class="brush-grid">
         <div class="brush-item" onclick="openLightbox(this)">
-        <img src="CANGCANG.png">
+          <img src="CANGCANG.png">
         </div>
-        <div class="brush-item"><img src="DUIJIUDANGGE.png"></div>
-        <div class="brush-item"><img src="FUXING.png"></div>
-        <div class="brush-item"><img src="GUANYINZHEN.png"></div>
-        <div class="brush-item"><img src="HUANQILEI.png"></div>
-        <div class="brush-item"><img src="JINTINGCHUNZHOU.png"></div>
+        <div class="brush-item" onclick="openLightbox(this)">
+          <img src="DUIJIUDANGGE.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+          <img src="FUXING.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+          <img src="GUANYINZHEN.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+          <img src="HUANQILEI.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+          <img src="JINTINGCHUNZHOU.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="RENSHENGJIHE.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="SHANDAOSONGZHI.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="SHENSONG.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="SHUIMO.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="XIANGYUANSHI.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="XIAOQIANSHAN.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="XINGLUOQI.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="YINCHUAN.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="ZENGGONG.png">
+        </div>
+        <div class="brush-item" onclick="openLightbox(this)">
+            <img src="ZUOKANYUNQI.png">
+        </div>
       </div>
     </div>
 
@@ -754,7 +781,7 @@
 <div id="page-price" class="page">
   <div class="page-header">
     <div class="page-avatar">头像</div>
-    <div class="page-bubble">不同用途不同定价，下单前记得确认好用途哦！</div>
+    <div class="page-bubble">如果拿不准自己的使用范围到底在哪里，也可以直接问我，告诉我你需要的用途就行！</div>
   </div>
   <div class="content">
     <div class="section-label">价格明细</div>
@@ -832,7 +859,7 @@
 <div id="page-notice" class="page">
   <div class="page-header">
     <div class="page-avatar">头像</div>
-    <div class="page-bubble">下单前麻烦看一眼，会对我们都好哒！</div>
+    <div class="page-bubble">如果有不明白的地方尽管问我哟</div>
   </div>
   <div class="content">
     <div class="section-label">约字须知</div>
@@ -894,11 +921,10 @@
 <div id="page-contact" class="page">
   <div class="page-header">
     <div class="page-avatar">头像</div>
-    <div class="page-bubble">加我的时候带个备注，我会更快认出你！</div>
+    <div class="page-bubble">孩子们加好友请带备注哦 ₒ⩊ₒ</div>
   </div>
   <div class="content">
     <div class="section-label">联系我</div>
-    <div class="contact-note-block">孩子们加好友请带备注哦 ₒ⩊ₒ</div>
     <div class="contact-item">
       <div class="contact-platform">私人微信</div>
       <div class="contact-stack"><div class="contact-id">BiTE-1016Jz</div></div>
@@ -911,7 +937,14 @@
       <div class="contact-platform">小红书</div>
       <div class="contact-stack">
         <div class="contact-id">狩牙小发雷霆</div>
-        <div class="contact-note">小红书号会经常搬迁，公众号随时更新</div>
+        <div class="contact-note">小红书号会经常搬迁的，如果换号会在这里说明！</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-platform">公众号</div>
+      <div class="contact-stack">
+        <div class="contact-id">坏事被猫摆平</div>
+        <div class="contact-note">公众号会更新重要动态！</div>
       </div>
     </div>
     <div class="contact-item">
@@ -922,7 +955,7 @@
       <div class="contact-platform">微博</div>
       <div class="contact-stack">
         <div class="contact-id">巡演的恋爱图解</div>
-        <div class="contact-note">更新例图较多，现在少用，非必要不选这个</div>
+        <div class="contact-note">更新例图较多，现在比较少用，非必要不选这个喔</div>
       </div>
     </div>
   </div>
