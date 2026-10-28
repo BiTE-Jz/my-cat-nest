@@ -573,6 +573,65 @@
   }
 }
 
+
+/* 首页入口：整张插画铺满卡片 */
+.home-grid {
+  grid-auto-rows: 68px;
+  align-items: stretch;
+}
+
+.home-big {
+  padding: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.home-cell {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: white;
+}
+
+.home-card-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-card-label {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 8px;
+  color: white;
+  background: rgba(30, 35, 30, 0.55);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.home-big .home-card-label {
+  font-size: 15px;
+  padding: 7px 12px;
+}
+
+.home-cell:hover,
+.home-big:hover {
+  border-color: var(--green);
+}
+
 </style>
 </head>
 <body>
@@ -585,19 +644,31 @@
     <div class="hero-hint">点击了解更多 ↑</div>
   </div>
 
-  <div class="home-grid">
-    <!-- 左边：客单展示 -->
-    <div class="home-big" onclick="showPage('works')">
-      <div class="home-big-img">客单展示图</div>
-      <div class="home-big-label">客单展示</div>
-    </div>
-
-    <!-- 右边：四个入口 -->
-    <div class="home-cell" onclick="showPage('brush')">笔刷案例</div>
-    <div class="home-cell" onclick="showPage('price')">价格明细</div>
-    <div class="home-cell" onclick="showPage('notice')">约字须知</div>
-    <div class="home-cell" onclick="showPage('contact')">联系方式</div>
+  
+<div class="home-grid">
+  <!-- 左侧大入口 -->
+  <div class="home-big" onclick="showPage('works')">
+    <img class="home-card-art" src="客单展示入口.png">
   </div>
+
+  <!-- 右侧四个入口 -->
+  <div class="home-cell" onclick="showPage('brush')">
+    <img class="home-card-art" src="笔刷入口.png">
+  </div>
+
+  <div class="home-cell" onclick="showPage('price')">
+    <img class="home-card-art" src="价格入口.png">
+  </div>
+
+  <div class="home-cell" onclick="showPage('notice')">
+    <img class="home-card-art" src="须知入口.png">
+  </div>
+
+  <div class="home-cell" onclick="showPage('contact')">
+    <img class="home-card-art" src="联系入口.png">
+  </div>
+</div>
+
 </div>
 
 <!-- ══════════ About Me ══════════ -->
