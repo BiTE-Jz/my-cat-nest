@@ -39,7 +39,7 @@
   .hero {
     background: var(--accent);
     color: white;
-    padding: 32px 20px 24px;
+    padding: 32px 20px 100px;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -491,6 +491,88 @@
     align-items: center;
     justify-content: center;
   }
+
+  
+/* 底部双按钮导航 */
+.bottom-actions {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  gap: 10px;
+  width: calc(100% - 40px);
+  max-width: 440px;
+}
+
+.bottom-actions button {
+  position: static;
+  transform: none;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--card-bg);
+  color: var(--green);
+  border: 1.5px solid var(--green);
+  box-shadow: 0 4px 16px rgba(145, 165, 140, 0.12);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.bottom-actions button:active {
+  background: var(--green-light);
+  transform: scale(0.97);
+}
+
+
+/* 右侧半屏抽屉菜单 */
+.menu-overlay {
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.menu-sheet {
+  width: 52%;
+  max-width: 320px;
+  min-width: 210px;
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+  border-radius: 20px 0 0 20px;
+  padding: 24px 14px;
+  overflow-y: auto;
+  animation: menuSlideIn 0.25s ease-out;
+}
+
+.menu-close {
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.menu-list {
+  gap: 10px;
+}
+
+.menu-item {
+  padding: 14px 12px;
+  font-size: 14px;
+}
+
+/* 从右侧滑入 */
+@keyframes menuSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -575,7 +657,9 @@
 
     <div id="brush-keti">
       <div class="brush-grid">
-        <div class="brush-item"><img src="CANGCANG.png"></div>
+        <div class="brush-item" onclick="openLightbox(this)">
+        <img src="CANGCANG.png">
+        </div>
         <div class="brush-item"><img src="DUIJIUDANGGE.png"></div>
         <div class="brush-item"><img src="FUXING.png"></div>
         <div class="brush-item"><img src="GUANYINZHEN.png"></div>
@@ -774,13 +858,15 @@
 </div>
 
 <!-- ── 底部悬浮菜单按钮 ── -->
-<button class="fab" onclick="openMenu()">菜单</button>
+<div class="bottom-actions">
+  <button class="home-fab" onclick="showPage('home')">首页</button>
+  <button class="fab" onclick="openMenu()">菜单</button>
+</div>
 
 <!-- ── 菜单浮层 ── -->
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenuOutside(event)">
   <div class="menu-sheet">
     <div class="menu-list">
-      <button class="menu-item" id="menu-home" onclick="showPage('home')">首页</button>
       <button class="menu-item" id="menu-works" onclick="showPage('works')">客单展示</button>
       <button class="menu-item" id="menu-brush" onclick="showPage('brush')">笔刷案例</button>
       <button class="menu-item" id="menu-price" onclick="showPage('price')">价格明细</button>
@@ -841,9 +927,7 @@
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
   }
-
-  // 初始化菜单高亮
-  document.getElementById('menu-home').classList.add('current');
 </script>
 </body>
 </html>
+
